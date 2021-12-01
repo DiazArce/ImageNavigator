@@ -6,7 +6,7 @@ const StoreState = (props) => {
 
   const initialState = {
     idImageList: [],
-    toggleRandomImage: true,
+    toggleRandomImage: false,
   };
   const [state, dispatch] = useReducer(StoreReducer, initialState);
 

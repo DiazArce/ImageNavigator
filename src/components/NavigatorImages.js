@@ -16,9 +16,9 @@ const NavigatorImages = ({ images }) => {
         <button
         onClick={() => handleClickPause()}
         className="custom-button"
-        style={{ background: toggleRandomImage ? "#fb5263" : "#78ebb3" }}
+        style={{ background: toggleRandomImage ? "#78ebb3" : "#fb5263"}}
       >
-        {toggleRandomImage ? <span>pause</span> : <span>play</span>}
+        {toggleRandomImage ? <span>play</span> : <span>pause</span>}
       </button>
       </div>
       <div className="container-images">

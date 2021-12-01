@@ -12,7 +12,7 @@ const useRandomImage = (seconds, pause) => {
   };
   useEffect(() => {
     let interval = null;
-    if (pause) {
+    if (!pause) {
       connectApi();
       interval = setInterval(() => {
         connectApi();
