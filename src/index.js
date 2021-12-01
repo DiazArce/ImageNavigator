@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import StoreState from "./context/images/storeState";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreState>
+      <App />
+    </StoreState>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

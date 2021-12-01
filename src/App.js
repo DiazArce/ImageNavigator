@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import StoredImages from "./components/StoredImages";
+import React, { useContext } from "react";
+import NavigatorImages from "./components/NavigatorImages";
+import useRandomImage from "./hook/useRandomImage";
+import StoreContext from "./context/images/storeContext";
+import { SECONDS_TO_UPDATE_IMAGES } from "./constants";
+import "./styles/containers.css";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const { toggleRandomImage } = useContext(StoreContext);
+  const { randomImages } = useRandomImage(SECONDS_TO_UPDATE_IMAGES, toggleRandomImage);
+
+  if (!randomImages) {
+    return <h1>loading..</h1>;
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>IMAGE NAVIGATOR</h1>
       </header>
+      <div className="content">
+        <NavigatorImages images={randomImages} />
+        <StoredImages />
+      </div>
     </div>
   );
-}
-
+};
 export default App;
